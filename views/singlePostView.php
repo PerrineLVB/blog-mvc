@@ -12,6 +12,16 @@ require_once 'partials/header.php';
     </div>
     <p> <?php echo $post->getContent() ?></p>
     <p><em>Ecrit par <a href='author.php?id=<?php echo $post_user->getIdUser() ?>'><?php echo $post_user->getPseudo(); ?></a><br><?php echo $post->getDate(); ?></em></p>
+    <div class="container">
+        <figure class="text-end">
+            <blockquote class="blockquote">
+                <p>Commentaire</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+                Auteur/Date
+            </figcaption>
+        </figure>
+    </div>
 </section>
 
 <?php

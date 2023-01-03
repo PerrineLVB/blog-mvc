@@ -2,7 +2,7 @@
 require_once 'partials/header.php';
 ?>
 
-<section class="container text-center">
+<section class="container text-center w-50">
     <h2 class="mt-2"><i class="fa-regular fa-user"></i></h2>
     <h2>Connexion</h2>
     <form method="post">

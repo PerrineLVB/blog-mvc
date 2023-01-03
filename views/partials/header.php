@@ -26,14 +26,14 @@
                         </a>
                         <ul class="dropdown-menu">
                             <?php foreach ($categories as $category) { ?>
-                                <li><a class="dropdown-item" href="category.php?id=<?php echo $category->getIdCategory() ?>"><?php echo $category->getCategoryName() ?></a></li>
+                                <li><a class="dropdown-item" href="category.php?id=<?php echo $category->getIdCategory(); ?>"><?php echo $category->getCategoryName() ?></a></li>
                             <?php } ?>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <?php
                         if (isset($_SESSION['user']) && !empty($_SESSION['user'])) { ?>
-                            <a class="nav-link" href="createPost.php">Nouveau post <i class="fa-regular fa-pen-to-square"></i></a>
+                            <a class="nav-link" href="addPost.php">Nouveau post <i class="fa-regular fa-pen-to-square"></i></a>
                         <?php } ?>
                     </li>
                     <li class="nav-item">

@@ -80,5 +80,6 @@ class UserManager
     {
         session_start();
         $_SESSION['user'] = $user;
+        header('location:index.php');
     }
 }
