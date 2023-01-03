@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <html lang="en">
 
 <head>
@@ -7,14 +9,14 @@
     <title>Ô TOULOUSE</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style/custom.css">
     <script src="https://kit.fontawesome.com/8f442c55b9.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-light sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">Ô TOULOUSE</a>
+            <a class="navbar-brand" href="index.php"><strong>Ô TOULOUSE</strong></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,7 +35,7 @@
                     <li class="nav-item">
                         <?php
                         if (isset($_SESSION['user']) && !empty($_SESSION['user'])) { ?>
-                            <a class="nav-link" href="addPost.php">Nouveau post <i class="fa-regular fa-pen-to-square"></i></a>
+                            <a class="nav-link" href="addPost.php">Nouvel article <i class="fa-regular fa-pen-to-square"></i></a>
                         <?php } ?>
                     </li>
                     <li class="nav-item">
@@ -53,3 +55,5 @@
             </div>
         </div>
     </nav>
+
+    <div class="notFooter">

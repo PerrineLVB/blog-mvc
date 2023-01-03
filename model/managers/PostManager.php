@@ -49,8 +49,17 @@ class PostManager
         return $posts;
     }
 
-    public static function addPost() {
-        //à construire
+    public static function addPost($title, $content, $picture, $userId) {
+        $dbh = dbconnect();
+        $date = (new DateTime())->format('Y-m-d H:i:s');
+        $query = "INSERT INTO t_post (title, date, content, picture, id_user) VALUES (:title, '$date', :content, :picture, :id_user)";
+        $stmt = $dbh->prepare($query);
+        $stmt->bindParam(':title', $title);
+        $stmt->bindParam(':content', $content);
+        $stmt->bindParam(':picture', $picture);
+        $stmt->bindParam(':id_user', $userId);
+        $stmt->execute();
+        return $dbh->lastInsertId();
     }
 
     public static function editPost() {
