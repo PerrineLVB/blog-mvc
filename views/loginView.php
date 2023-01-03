@@ -9,7 +9,6 @@ require_once 'partials/header.php';
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Adresse e-mail</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required name="email">
-            <div id="emailHelp" class="form-text">Nous ne partagerons jamais votre adresse e-mail.</div>
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Mot de passe</label>

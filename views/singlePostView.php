@@ -2,10 +2,7 @@
 require_once 'partials/header.php';
 require_once 'model/classes/User.php';
 require_once 'model/managers/UserManager.php';
-require_once 'model/managers/CommentManager.php';
-require_once 'models/classes/Comment.php';
 $categories = CategoryManager::getAllCategories();
-$comments = CommentManager::getCommentsByPostId($post->getIdPost());
 ?>
 
 <section id="hero">
@@ -22,12 +19,6 @@ $comments = CommentManager::getCommentsByPostId($post->getIdPost());
     </div>
     <p> <?php echo $post->getContent() ?></p>
     <p><em>Ecrit par <a href='author.php?id=<?php echo $post_user->getIdUser() ?>'><?php echo $post_user->getPseudo(); ?></a><br><?php echo $post->getDate(); ?></em></p>
-    <div id="comments">
-            <?php foreach ($comments as $comment) { ?>
-                <div><?php echo $comment->getContent() ?></div>
-                <p><?php echo $comment->getDate ?></p>
-            <?php } ?>
-    </div>
 </section>
 
 <?php

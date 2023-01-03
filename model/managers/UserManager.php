@@ -76,29 +76,9 @@ class UserManager
         return $user;
     }
 
-    public static function connectUser($user, $mdp)
+    public static function connectUser($user)
     {
-        $dbh = dbconnect();
-        $stmt = $dbh->prepare("SELECT * FROM t_user WHERE email = :email");
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->execute();
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($user) {
-            //var_dump($user); //tester la connexion utilisateur ici ! 
-            $hashed = $user['password'];
-            $isAuthUser = password_verify($mdp, $hashed);
-            if ($isAuthUser) {
-                var_dump($_SESSION);
-                session_start();
-                $_SESSION['user'] = [
-                    'id' => $user['id_user'],
-                    'email' => $user['email']
-                ];
-                var_dump($_SESSION);
-                header('location:index.php');
-            }
-        } else {
-            echo "Cet utilisateur n'existe pas";
-        }
+        session_start();
+        $_SESSION['user'] = $user;
     }
 }
