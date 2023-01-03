@@ -2,8 +2,8 @@
 require_once 'partials/header.php';
 ?>
 
-<section class="container mt-5">
-    <div class="row">
+<section class="container mt-5 text-center">
+    <div class="row d-flex justify-content-evenly">
         <?php foreach ($posts as $post) { ?>
             <div class="card col-12 col-md-4 col-lg-3 me-3 mb-3">
                 <a href="singlePost.php?id=<?php echo $post->getIdPost() ?>"><img src="<?php echo $post->getPicture() ?>" class="card-img-top mt-2" alt="..."></a>

@@ -31,7 +31,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="createPost.php">Nouveau post <i class="fa-regular fa-pen-to-square"></i></a>
+                        <?php
+                        if (isset($_SESSION['user']) && !empty($_SESSION['user'])) { ?>
+                            <a class="nav-link" href="createPost.php">Nouveau post <i class="fa-regular fa-pen-to-square"></i></a>
+                        <?php } ?>
                     </li>
                     <li class="nav-item">
                         <?php

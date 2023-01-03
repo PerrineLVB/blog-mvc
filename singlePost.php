@@ -3,7 +3,7 @@
 require_once 'model/managers/PostManager.php';
 require_once 'model/managers/CategoryManager.php';
 require_once 'model/managers/UserManager.php';
-
+session_start();
 
 //cette page étant censée recevoir un id, on va d'abord vérifier qu'il est bien présent
 if (isset($_GET['id']) && !empty($_GET['id'])) {

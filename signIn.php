@@ -3,6 +3,7 @@ require_once 'model/managers/PostManager.php';
 require_once 'model/managers/CategoryManager.php';
 require_once 'model/managers/UserManager.php';
 $categories = CategoryManager::getAllCategories();
+session_start();
 
 if(isset($_POST) && !empty($_POST)){
     $pseudo = htmlentities($_POST['pseudo']);
