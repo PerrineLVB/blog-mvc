@@ -6,7 +6,7 @@ require_once 'partials/header.php';
     <h1 class="mb-5">Bienvenue sur ce blog dédié à Toulouse</h1>
     <div class="row d-flex justify-content-evenly">
         <?php foreach ($posts as $post) { ?>
-            <div class="card col-12 col-md-4 col-lg-3 me-3 mb-3">
+            <div class="card col-12 col-md-4 col-lg-3 me-3 mb-5">
                 <img class="img-fluid mt-2 rounded mx-auto h-75" src="images/<?php echo $post->getPicture() ?>" class="card-img-top mt-2" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $post->getTitle() ?></h5>

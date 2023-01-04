@@ -8,7 +8,7 @@ $categories = CategoryManager::getAllCategories();
 if (isset($_GET['id']) && !empty($_GET['id'])) {
     $id = $_GET['id'];
     $categoryInfos = CategoryManager::getCategoryInfos($id);
-    $categoryPosts = CategoryManager::getPostsByCategoryId($id);
+    $categoryPosts = PostManager::getPostsByCategoryId($id);
 }
 
 require_once 'views/categoryView.php';

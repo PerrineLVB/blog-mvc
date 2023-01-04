@@ -2,7 +2,7 @@
 
 <footer class="footer d-flex flex-wrap justify-content-between align-items-center py-4 mt-5 border-top navbar navbar-expand-lg bg-light">
     <div class="col-md-4 d-flex align-items-center">
-        <span class="ms-5 mb-3 mb-md-0 text-muted">© 2022 || Ô_Toulouse, Perrine_LVB</span>
+        <span class="ms-5 mb-3 mb-md-0 text-muted">© 2023 || Ô_Toulouse, Perrine_LVB</span>
     </div>
 
     <ul class="me-5 nav col-md-4 justify-content-end list-unstyled d-flex">

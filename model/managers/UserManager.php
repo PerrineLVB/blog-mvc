@@ -1,6 +1,6 @@
 <?php
 //le rôle du manager étant d'interagir avec la bdd, c'est ici que l'on va récupérer le fichier qui contient la fonction correspondante
-require_once './model/DBConnect.php';
+require_once './model/DBconnect.php';
 //nous allons transcrire les données récupérées sous la forme d'objets de la classe User, nous devons donc inclure le fichier correspondant  
 require_once './model/classes/User.php';
 

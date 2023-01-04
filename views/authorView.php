@@ -6,7 +6,7 @@ require_once 'partials/header.php';
     <h2 class="mb-5">Articles publiés par l'utilisateur : <?php echo $userInfos->getPseudo() ?></h2>
     <div class="row d-flex justify-content-evenly">
         <?php foreach ($userPosts as $userPost) {; ?>
-            <div class="card col-12 col-md-4 col-lg-3 me-3 mb-3">
+            <div class="card col-12 col-md-4 col-lg-3 me-3 mb-5">
                 <img src="images/<?php echo $userPost->getPicture() ?>" class="img-fluid mt-2 rounded mx-auto h-75" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $userPost->getTitle() ?></h5>

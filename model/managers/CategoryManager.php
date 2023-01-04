@@ -1,6 +1,6 @@
 <?php 
 
-require_once './model/DBConnect.php';
+require_once './model/DBconnect.php';
 require_once './model/classes/Category.php';
 require_once './model/classes/Post.php';
 
@@ -36,13 +36,5 @@ class CategoryManager {
         return $category;
     }
 
-    public static function getPostsByCategoryId($id){
-        $dbh = dbconnect();
-        $query = 'SELECT * FROM t_post JOIN t_post_category ON t_post_category.id_post = t_post.id_post WHERE t_post_category.id_category = :id';
-        $stmt = $dbh->prepare($query);
-        $stmt->bindParam(':id', $id);
-        $stmt->execute();
-        $posts = $stmt->fetchAll(PDO::FETCH_CLASS, 'Post');
-        return $posts;
-    }
+    
 }
