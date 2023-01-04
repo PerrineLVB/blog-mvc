@@ -29,7 +29,8 @@ class PostManager
         return $post;
     }
 
-    public static function getPostsByCategoryId ($id){
+    public static function getPostsByCategoryId($id)
+    {
         $dbh = dbconnect();
         $query = "SELECT * FROM t_post JOIN t_post_category ON t_post_category.id_post = t_post.id_post WHERE t_post_category.id_category = :id";
         $stmt = $dbh->prepare($query);
@@ -39,7 +40,8 @@ class PostManager
         return $posts;
     }
 
-    public static function getPostsByUserId($id){
+    public static function getPostsByUserId($id)
+    {
         $dbh = dbconnect();
         $query = "SELECT * FROM t_post WHERE id_user = :id";
         $stmt = $dbh->prepare($query);
@@ -49,7 +51,8 @@ class PostManager
         return $posts;
     }
 
-    public static function addPost($title, $content, $picture, $userId) {
+    public static function addPost($title, $content, $picture, $userId)
+    {
         $dbh = dbconnect();
         $date = (new DateTime())->format('Y-m-d H:i:s');
         $query = "INSERT INTO t_post (title, date, content, picture, id_user) VALUES (:title, '$date', :content, :picture, :id_user)";
@@ -62,11 +65,23 @@ class PostManager
         return $dbh->lastInsertId();
     }
 
-    public static function editPost() {
+    public static function addPostCategories($id_post, $id_category)
+    {
+        $dbh = dbconnect();
+        $query = "INSERT INTO t_post_category (id_post, id_category) VALUES (:post, :category)";
+        $stmt = $dbh->prepare($query);
+        $stmt->bindParam(':post', $id_post);
+        $stmt->bindParam(':category', $id_category);
+        $stmt->execute();
+    }
+
+    public static function editPost()
+    {
         //à construire
     }
 
-    public static function deletePost() {
+    public static function deletePost()
+    {
         //à construire
     }
 }

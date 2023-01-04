@@ -1,6 +1,6 @@
 <?php
-require_once 'model/DBconnect.php';
-require_once 'model/classes/Comment.php';
+require_once './model/DBconnect.php';
+require_once './model/classes/Comment.php';
 
 class CommentManager
 {
@@ -14,4 +14,5 @@ class CommentManager
         $comments = $stmt->fetchAll(PDO::FETCH_CLASS, 'Comment');
         return $comments;
     }
+
 }

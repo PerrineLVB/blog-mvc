@@ -22,7 +22,7 @@ require_once 'partials/header.php';
             <span>Sélectionner une ou plusieurs catégories</span>
         <?php foreach ($categories as $category) { ?>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="<?php echo $category->getIdCategory(); ?>" id="category.<?php echo $category->getIdCategory(); ?>" name="categories">
+                <input class="form-check-input" type="checkbox" value="<?php echo $category->getIdCategory(); ?>" id="category.<?php echo $category->getIdCategory(); ?>" name="categories[]">
                 <label class="form-check-label" for="category.<?php echo $category->getIdCategory(); ?>">
                     <?php echo $category->getCategoryName(); ?>
                 </label>

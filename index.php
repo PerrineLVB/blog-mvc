@@ -1,4 +1,5 @@
 <?php
+session_start();
 //on va chercher nos managers pour pouvoir utiliser leurs fonctions 
 require_once 'model/managers/PostManager.php';
 require_once 'model/managers/CategoryManager.php';
