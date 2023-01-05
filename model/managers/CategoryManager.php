@@ -36,5 +36,13 @@ class CategoryManager {
         return $category;
     }
 
-    
+    public static function addCategory($cat_name)
+    {
+        $dbh = dbconnect();
+        $query = "INSERT INTO t_category (category_name) VALUES (:cat_name)";
+        $stmt = $dbh->prepare($query);
+        $stmt->bindParam(':cat_name', $cat_name);
+        $stmt->execute();
+    }
+
 }

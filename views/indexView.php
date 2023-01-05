@@ -3,7 +3,7 @@ require_once 'partials/header.php';
 ?>
 
 <section class="container mt-4 text-center">
-    <h1 class="mb-5">Bienvenue sur ce blog dédié à Toulouse</h1>
+    <h1 class="mb-5">Bienvenue sur ce blog dédié à la belle ville de Toulouse</h1>
     <div class="row d-flex justify-content-evenly">
         <?php foreach ($posts as $post) { ?>
             <div class="card col-12 col-md-4 col-lg-3 me-3 mb-5">

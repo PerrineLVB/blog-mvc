@@ -77,7 +77,7 @@ class PostManager
 
     public static function editPost()
     {
-        //à construire
+        
     }
 
     public static function deletePost()

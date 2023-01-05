@@ -15,10 +15,10 @@ class CommentManager
         return $comments;
     }
 
-    public static function getAuthorByCommentId($id)
+    public static function getUsernameByCommentId($id)
     {
         $dbh = dbconnect();
-        $query = "SELECT pseudo FROM t_comment JOIN t_user ON t_comment.id_user = t_user.id_user WHERE t_comment.id_comment = :id";
+        $query = "SELECT pseudo FROM t_user JOIN t_comment ON t_comment.id_user = t_user.id_user WHERE t_comment.id_comment = :id";
         $stmt = $dbh->prepare($query);
         $stmt->bindParam(':id', $id);
         $stmt->execute();
@@ -27,8 +27,15 @@ class CommentManager
         return $author;
     }
 
-    public static function addComment($comment)
+    public static function addComment($comment, $id_user, $id_post)
     {
-        
+        $dbh = dbconnect();
+        $date = (new DateTime())->format('Y-m-d H:i:s');
+        $query = "INSERT INTO t_comment (id_post, id_user, date, content) VALUES (:id_post, :id_user, '$date', :content)";
+        $stmt = $dbh->prepare($query);
+        $stmt->bindParam(':id_post', $id_post);
+        $stmt->bindParam(':id_user', $id_user);
+        $stmt->bindParam(':content', $comment);
+        $stmt->execute();
     }
 }

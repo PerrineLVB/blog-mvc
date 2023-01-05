@@ -20,14 +20,18 @@ require_once 'partials/header.php';
         </div>
         <div class="mt-4">
             <span>Sélectionner une ou plusieurs catégories</span>
-        <?php foreach ($categories as $category) { ?>
-            <div class="form-check mt-1">
-                <input class="form-check-input" type="checkbox" value="<?php echo $category->getIdCategory(); ?>" id="category.<?php echo $category->getIdCategory(); ?>" name="categories[]">
-                <label class="form-check-label" for="category.<?php echo $category->getIdCategory(); ?>">
-                    <?php echo $category->getCategoryName(); ?>
-                </label>
+            <?php foreach ($categories as $category) { ?>
+                <div class="form-check mt-1">
+                    <input class="form-check-input" type="checkbox" value="<?php echo $category->getIdCategory(); ?>" id="category.<?php echo $category->getIdCategory(); ?>" name="categories[]">
+                    <label class="form-check-label" for="category.<?php echo $category->getIdCategory(); ?>">
+                        <?php echo $category->getCategoryName(); ?>
+                    </label>
+                </div>
+            <?php } ?>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="addCategory" name="newCategory" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
-        <?php } ?>
         </div>
         <button type="submit" class="btn btn-outline-danger mt-4">Soumettre l'article</button>
     </form>

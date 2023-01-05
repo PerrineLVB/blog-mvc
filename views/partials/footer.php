@@ -11,10 +11,13 @@
                 </svg><i class="fa-brands fa-square-twitter"></i></a></li>
         <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/toulousefr/?hl=fr" target="_blank"><svg class="bi" width="24" height="24">
                     <use xlink:href="#instagram"></use>
-                </svg><i class="fa-brands fa-instagram"></a></i></li>
+                </svg><i class="fa-brands fa-instagram"></i></a></li>
         <li class="ms-3"><a class="text-muted" href="https://fr-fr.facebook.com/Toulouse/" target="_blank"><svg class="bi" width="24" height="24">
                     <use xlink:href="#facebook"></use>
-                </svg><i class="fa-brands fa-square-facebook"></a></i></li>
+                </svg><i class="fa-brands fa-square-facebook"></i></a></li>
+        <li class="ms-3"><a class="text-muted" href="mailto:plaunay.dev@gmail.com"><svg class="bi" width="24" height="24">
+                    <use xlink:href="#mail"></use>
+                </svg><i class="fa-regular fa-envelope"></i></a></li>
     </ul>
 </footer>
 
