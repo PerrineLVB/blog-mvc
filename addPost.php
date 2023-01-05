@@ -18,18 +18,23 @@ if (isset($_SESSION['user'])) {
         $content = $_POST['content'];
         $userId = $_SESSION['user']['id'];
         $newPostId = PostManager::addPost($title, $content, $picName, $userId);
-        // ajout des catégories sélectionnées
-        $postCategories = $_POST['categories'];
+        if ($_POST['newCategory'] != null) {
+            $newCategory = $_POST['newCategory'];
+            $lastCategory = CategoryManager::addCategory($newCategory);
+            PostManager::addPostCategories($newPostId, $lastCategory);
+        }
+            // ajout des catégories sélectionnées
+            $postCategories = $_POST['categories'];
         /*$_POST['categories'] nous donne un tableau des catégories sélectionnées
         il suffit donc de boucler sur ce tableau et pour chaque ligne insérer
         dans la table de liaison l'id de l'article ($newPost) et l'id de la catégorie*/
         foreach ($postCategories as $postCategory) {
             PostManager::addPostCategories($newPostId, $postCategory);
         }
-        // upload de fichier
+        header('location:index.php');
     }
 
     require_once 'views/addpostView.php';
 } else {
-    echo 'Vous ne passerez pas !!!';
+    echo 'Vous devez être connecté(e) pour pouvoir ajouter un article.';
 }

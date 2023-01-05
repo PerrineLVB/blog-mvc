@@ -16,7 +16,7 @@ require_once 'partials/header.php';
         </div>
         <div class="mb-3">
             <label for="inputPicture" class="form-label">Télécharger une image</label>
-            <input class="form-control" type="file" id="inputPicture" name="picture">
+            <input class="form-control w-75" type="file" id="inputPicture" name="picture">
         </div>
         <div class="mt-4">
             <span>Sélectionner une ou plusieurs catégories</span>
@@ -29,8 +29,7 @@ require_once 'partials/header.php';
                 </div>
             <?php } ?>
             <div class="mb-3">
-                <input type="text" class="form-control" id="addCategory" name="newCategory" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <input type="text" class="form-control w-50 mt-2" id="addCategory" name="newCategory" aria-describedby="emailHelp" placeholder="Ajoutez une nouvelle catégorie">
             </div>
         </div>
         <button type="submit" class="btn btn-outline-danger mt-4">Soumettre l'article</button>

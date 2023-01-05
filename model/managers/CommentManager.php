@@ -38,4 +38,12 @@ class CommentManager
         $stmt->bindParam(':content', $comment);
         $stmt->execute();
     }
+
+    public static function deleteComment($id){
+        $dbh = dbconnect();
+        $query = "DELETE FROM t_comment WHERE id_post = :id";
+        $stmt = $dbh->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
 }

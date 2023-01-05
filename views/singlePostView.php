@@ -12,10 +12,10 @@ require_once 'partials/header.php';
     </div>
     <p class="mt-2"> <?php echo $post->getContent() ?></p>
     <div class="d-flex justify-content-between">
-        <p><em>Ecrit par <a href='author.php?id=<?php echo $post_user->getIdUser() ?>'><?php echo $post_user->getPseudo(); ?></a><br><?php echo $post->getDate(); ?></em></p>
+        <p><em>Ecrit par <a href="author.php?id=<?php echo $post_user->getIdUser() ?>"><?php echo $post_user->getPseudo(); ?></a><br><?php echo $post->getDate(); ?></em></p>
         <div>
-            <button href="" type="button" class="btn btn-outline-danger h-75">Modifier l'article <i class="fa-regular fa-pen-to-square"></i></button>
-            <button href="" type="button" class="btn btn-outline-danger h-75">Supprimer l'article <i class="fa-regular fa-trash-can"></i></button>
+            <a href="updatePost.php?id=<?php echo $post->getIdPost() ?>"><button type="button" class="btn btn-outline-danger h-75">Modifier l'article <i class="fa-regular fa-pen-to-square"></i></button></a>
+            <a href="deletePost.php?id=<?php echo $post->getIdPost() ?>"><button type="button" class="btn btn-outline-danger h-75">Supprimer l'article <i class="fa-regular fa-trash-can"></i></button></a>
         </div>
     </div>
     <div class="container" id="comments">

@@ -43,6 +43,15 @@ class CategoryManager {
         $stmt = $dbh->prepare($query);
         $stmt->bindParam(':cat_name', $cat_name);
         $stmt->execute();
+        $lastCategory = $dbh->lastInsertId();
+        return $lastCategory;
     }
 
+    public static function deleteCategories($id){
+        $dbh = dbconnect();
+        $query = "DELETE FROM t_post_category WHERE id_post = :id";
+        $stmt = $dbh->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
 }
