@@ -47,7 +47,7 @@ class CategoryManager {
         return $lastCategory;
     }
 
-    public static function deleteCategories($id){
+    public static function deleteCategoriesByPostId($id){
         $dbh = dbconnect();
         $query = "DELETE FROM t_post_category WHERE id_post = :id";
         $stmt = $dbh->prepare($query);

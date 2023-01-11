@@ -10,7 +10,7 @@ require_once 'partials/header.php';
                 <img class="img-fluid mt-2 rounded mx-auto h-75" src="images/<?php echo $post->getPicture() ?>" class="card-img-top mt-2" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $post->getTitle() ?></h5>
-                    <a href="singlePost.php?id=<?php echo $post->getIdPost() ?>" class="btn btn-outline-danger">Voir l'article</a>
+                    <a href="readPost.php?id=<?php echo $post->getIdPost() ?>" class="btn btn-outline-danger">Voir l'article</a>
                 </div>
             </div>
         <?php } ?>

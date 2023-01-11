@@ -75,9 +75,19 @@ class PostManager
         $stmt->execute();
     }
 
-    public static function editPost()
+    public static function updatePost($id, $title, $content, $picture, $userId)
     {
-        
+        $dbh = dbconnect();
+        $date = (new DateTime())->format('Y-m-d H:i:s');
+        $query = "UPDATE t_post SET title = :title, date = :date, content = :content, picture = :picture, id_user = :user_id WHERE t_post.id_post = :id_post";
+        $stmt = $dbh->prepare($query);
+        $stmt->bindParam(':date', $date);
+        $stmt->bindParam(':id_post', $id);
+        $stmt->bindParam(':title', $title);
+        $stmt->bindParam(':content', $content);
+        $stmt->bindParam(':picture', $picture);
+        $stmt->bindParam(':user_id', $userId);
+        $stmt->execute();
     }
 
     public static function deletePost($id)

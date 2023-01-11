@@ -46,13 +46,20 @@
                         <?php }
                         ?>
                     </li>
+                    <li class="nav-item">
+                        <?php if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {  ?>
+                            <span class="nav-link"><em>Bonjour, <?php echo UserManager::getUserInfos($_SESSION['user']['id'])->getPseudo(); ?> !</em></span>
+                        <?php } ?>
+                    </li>
                 </ul>
                 <form class="d-flex mt-3" role="search">
                     <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
                     <button class="btn btn-danger" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
+
             </div>
         </div>
     </nav>
 
     <div class="notFooter">
+        

@@ -2,6 +2,7 @@
 session_start();
 require_once 'model/managers/PostManager.php';
 require_once 'model/managers/CategoryManager.php';
+require_once 'model/managers/UserManager.php';
 
 $categories = CategoryManager::getAllCategories();
 

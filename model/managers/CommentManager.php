@@ -39,7 +39,7 @@ class CommentManager
         $stmt->execute();
     }
 
-    public static function deleteComment($id){
+    public static function deleteCommentsByPostId($id){
         $dbh = dbconnect();
         $query = "DELETE FROM t_comment WHERE id_post = :id";
         $stmt = $dbh->prepare($query);

@@ -3,6 +3,7 @@ session_start();
 //on va chercher nos managers pour pouvoir utiliser leurs fonctions 
 require_once 'model/managers/PostManager.php';
 require_once 'model/managers/CategoryManager.php';
+require_once 'model/managers/UserManager.php';
 
 //ici on mettra toute la logique du code
 //nous aurons besoin de récupérer l'ensemble des catégories pour le menu
