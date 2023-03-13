@@ -47,7 +47,7 @@ require_once 'partials/header.php';
                     <?php } ?>
                 </div>
                 <?php if (isset($_SESSION['user'])) { ?>
-                    <form method="post" class="mt-5">
+                    <form method="post" class="mt-5" id="comments-form">
                         <textarea class="d-block m-auto w-50 rounded p-2" rows="5" placeholder="Votre commentaire..." name="content" id="inputContent"></textarea>
                         <input id="pseudo" type="hidden" value="<?php echo $_SESSION['user']['pseudo'] ?>">
                         <button type="submit" class="btn btn-outline-danger d-block m-auto mt-3">Ajouter un commentaire</button>

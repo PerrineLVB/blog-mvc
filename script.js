@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // console.log('Bienvenue dans mon code jQuery !');
-    $('form').submit(function (event) {
+    $('comments-form').submit(function (event) {
         event.preventDefault();                                                         // stoppe la propagation de l'évènement donc ici l'envoi du formulaire
         let comment = $('#inputContent').val();                                         // récupère le contenu du champ de formulaire
         // console.log(comment);                                                        // on l'affiche en console
